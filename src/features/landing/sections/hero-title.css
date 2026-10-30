@@ -1,6 +1,6 @@
 .hero h1.stretch-title {
   width: 100%;
-  margin: 8px 0 0;
+  margin: 0;
   font-size: inherit;
   line-height: 1;
   letter-spacing: normal;
@@ -20,22 +20,63 @@
   font-weight: 500;
   letter-spacing: 3px;
 }
+.hero:has(.stretch-title) .hero-composition {
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+.hero-copy:has(.stretch-title) > .label {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  max-width: 310px;
+  text-align: right;
+  line-height: 1.5;
+}
 .hero-copy:has(.stretch-title) .hero-tagline {
-  margin-top: 28px;
+  position: absolute;
+  left: 0;
+  bottom: 12px;
+  margin: 0;
+  font-size: clamp(26px, 3vw, 42px);
 }
 @media (max-width: 700px) {
-  .hero h1.stretch-title {
-    margin-top: 36px;
-  }
   .stretch-title-art {
     width: calc(100% + 24px);
     margin-left: -24px;
   }
+  .hero-copy:has(.stretch-title) > .label {
+    max-width: 165px;
+    font-size: 7px;
+  }
   .stretch-edition {
-    font-size: 23px;
+    font-size: 22px;
     letter-spacing: 2px;
   }
   .hero-copy:has(.stretch-title) .hero-tagline {
-    margin-top: 32px;
+    position: static;
+    margin-top: 20px;
+    font-size: 30px;
+  }
+}
+
+/* The ribbon extends above its title canvas and is clipped only at the page edge. */
+.hero:has(.stretch-title) {
+  position: relative;
+  isolation: isolate;
+}
+.hero:has(.stretch-title) .hero-topline {
+  position: relative;
+  z-index: 3;
+}
+.hero:has(.stretch-title) .hero-topline > span:first-child {
+  margin-left: clamp(90px, 13vw, 180px);
+}
+@media (max-width: 700px) {
+  .hero:has(.stretch-title) .hero-topline {
+    gap: 12px;
+  }
+  .hero:has(.stretch-title) .hero-topline > span:first-child {
+    margin-left: 58px;
+    max-width: 120px;
   }
 }

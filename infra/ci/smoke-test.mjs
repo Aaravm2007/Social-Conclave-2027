@@ -3,6 +3,7 @@ import { spawn } from "node:child_process";
 import { readdir, readFile } from "node:fs/promises";
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { stripVTControlCharacters } from "node:util";
 import { setTimeout as delay } from "node:timers/promises";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
@@ -31,7 +32,9 @@ let diagnostics = "";
 let ready = false;
 server.stdout.on("data", (chunk) => {
   diagnostics = (diagnostics + chunk).slice(-8000);
-  ready = diagnostics.includes(origin);
+  // Vite styles the port separately in CI. Match the readable URL rather
+  // than the raw output, which can contain ANSI codes inside the URL.
+  ready = stripVTControlCharacters(diagnostics).includes(origin);
 });
 server.stderr.on("data", (chunk) => {
   diagnostics = (diagnostics + chunk).slice(-8000);
@@ -61,7 +64,7 @@ try {
     assert.equal(
       server.exitCode,
       null,
-      `Preview exited before becoming ready:\n${diagnostics}`,
+      `Preview exited before becoming ready:\n${stripVTControlCharacters(diagnostics)}`,
     );
     try {
       const response = await fetch(origin, {
@@ -71,7 +74,10 @@ try {
     } catch {
       /* Retry until the preview starts or the deadline is reached. */
     }
-    assert.ok(Date.now() < deadline, `Preview did not start:\n${diagnostics}`);
+    assert.ok(
+      Date.now() < deadline,
+      `Preview did not start:\n${stripVTControlCharacters(diagnostics)}`,
+    );
     await delay(100);
   }
   const home = await fetch(origin, { signal: AbortSignal.timeout(5000) });

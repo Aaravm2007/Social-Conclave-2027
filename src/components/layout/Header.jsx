@@ -8,6 +8,7 @@ export default function Header() {
   const navigationRef = useRef(null);
   const [compactNav, setCompactNav] = useState(false);
   const [darkNav, setDarkNav] = useState(true);
+  const [navSurface, setNavSurface] = useState("#004aad");
 
   useEffect(() => {
     let frame = 0;
@@ -26,27 +27,47 @@ export default function Header() {
       setCompactNav(
         document.getElementById("top").getBoundingClientRect().bottom <= 110,
       );
+      const headerBounds = navigationRef.current.closest("header").getBoundingClientRect();
+      const sampleY = headerBounds.top + headerBounds.height / 2;
       const surface = [
         ...document.querySelectorAll("main > section, main > .ticker, footer"),
       ].find((element) => {
         const rect = element.getBoundingClientRect();
-        return rect.top <= 50 && rect.bottom > 50;
+        return rect.top <= sampleY && rect.bottom > sampleY;
       });
       let colour = surface
         ? getComputedStyle(surface).backgroundColor
         : getComputedStyle(document.body).backgroundColor;
       let rgb = colour.match(/[\d.]+/g)?.map(Number);
       if (!rgb || rgb[3] === 0) rgb = [246, 245, 239];
+      if (surface?.dataset.themeStart && surface.dataset.themeEnd) {
+        const channels = (hex) => hex.match(/[a-f\d]{2}/gi).map((part) => parseInt(part, 16));
+        const from = channels(surface.dataset.themeStart);
+        const to = channels(surface.dataset.themeEnd);
+        const distance = Number(getComputedStyle(surface).getPropertyValue("--theme-blend-distance")) || 160;
+        const progress = Math.max(0, Math.min(1, (sampleY - surface.getBoundingClientRect().top) / distance));
+        rgb = from.map((channel, index) => channel + (to[index] - channel) * progress);
+      }
+      const hex = `#${rgb.slice(0, 3).map((channel) => Math.round(channel).toString(16).padStart(2, "0")).join("")}`;
+      setNavSurface(hex);
+      const theme = document.querySelector('meta[name="theme-color"]');
+      if (theme && theme.content !== hex) theme.content = hex;
       setDarkNav(rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722 < 140);
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(updateSection);
     };
+    const header = navigationRef.current.closest("header");
+    const onHeaderSettled = (event) => {
+      if (event.target === header && event.propertyName === "top") onScroll();
+    };
     updateSection();
+    header.addEventListener("transitionend", onHeaderSettled);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
       cancelAnimationFrame(frame);
+      header.removeEventListener("transitionend", onHeaderSettled);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
@@ -71,7 +92,8 @@ export default function Header() {
   }, [activeSection, menu, compactNav]);
   return (
     <header
-      className={`site-header${compactNav ? " is-compact" : ""}${darkNav ? " on-dark" : " on-light"}`}
+      style={{ "--nav-surface": navSurface }}
+      className={`site-header floral-navigation${compactNav ? " is-compact" : ""}${darkNav ? " on-dark" : " on-light"}`}
     >
       <a className="wordmark" href="#top" aria-label="Social Conclave home">
         <img src="/images/logos/conclave-favicon.png" alt="" />

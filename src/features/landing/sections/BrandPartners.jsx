@@ -1,6 +1,6 @@
 export default function BrandPartners() {
   return (
-    <section className="trust-strip" aria-label="Organisers and collaborators">
+    <section data-theme-start="#004aad" data-theme-end="#f6f5ef" className="trust-strip" aria-label="Organisers and collaborators">
       <span>
         ROOTED IN PURPOSE.
         <br />

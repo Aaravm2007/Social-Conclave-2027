@@ -19,6 +19,9 @@ runs:
       run: npm run build
     - name: Smoke-test the production website
       shell: bash
+      env:
+        # Exercise Vite's coloured output to guard against CI-only URL parsing failures.
+        FORCE_COLOR: "1"
       run: npm run test:smoke
     - name: Save deployable website
       uses: actions/upload-artifact@v4

@@ -1,0 +1,68 @@
+/* Let the poster lead into the editorial content without a bright colour cut. */
+.landing-page > .ticker {
+  background: #004aad;
+  color: #e4dff3;
+  border: 0;
+  padding: 22px 0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+.landing-page > .ticker b { color: #c5b9e2; font-size: 22px; }
+.landing-page > .trust-strip {
+  --theme-blend-distance: 260;
+  background-color: #f6f5ef;
+  background-image: linear-gradient(180deg, #004aad 0%, #326dbb 22%, #7b9aca 48%, #dce3ed 80%, #f6f5ef 100%);
+  background-size: 100% calc(var(--theme-blend-distance) * 1px);
+  background-position: top;
+  background-repeat: no-repeat;
+  padding-top: 276px;
+  padding-bottom: 52px;
+  border-bottom: 0;
+}
+.landing-page > .trust-strip img.impact-logo {
+  width: 128px;
+  height: 128px;
+  max-width: 128px;
+  max-height: 128px;
+}
+.landing-page > .about { padding-top: 76px; }
+
+/* Content reveals once, with native scrolling and stable document geometry. */
+.landing-page.motion-ready .scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1);
+}
+.landing-page.motion-ready .scroll-reveal.is-revealed { opacity: 1; transform: translateY(0); }
+.landing-page .agenda-card:nth-child(3n + 2),
+.landing-page .guest-grid > article:nth-child(3n + 2) { transition-delay: 65ms; }
+.landing-page .agenda-card:nth-child(3n),
+.landing-page .guest-grid > article:nth-child(3n) { transition-delay: 130ms; }
+
+/* Both browser chrome and the floating navigation use the current surface. */
+.site-header.floral-navigation.on-dark,
+.site-header.floral-navigation.on-light {
+  background-color: var(--nav-surface, #004aad);
+  background-color: color-mix(in srgb, var(--nav-surface, #004aad) 76%, transparent);
+  border-color: color-mix(in srgb, currentColor 18%, transparent);
+  box-shadow: 0 8px 28px #071a3220, inset 0 1px 0 #ffffff14;
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  backdrop-filter: blur(22px) saturate(125%);
+  transition: top .65s cubic-bezier(.22, 1, .36, 1), width .65s cubic-bezier(.22, 1, .36, 1), height .65s cubic-bezier(.22, 1, .36, 1), padding .65s, color .6s, background-color .65s, border-color .6s, box-shadow .65s;
+}
+.site-header.floral-navigation.on-dark { color: #faf8ff; }
+.site-header.floral-navigation.on-light { color: #17231e; }
+
+@media (max-width: 700px) {
+  .landing-page > .ticker { padding: 18px 24px; gap: 20px; font-size: 10px; }
+  .landing-page > .trust-strip { --theme-blend-distance: 200; padding-top: 220px; padding-bottom: 34px; }
+  .landing-page > .trust-strip img.impact-logo { width: 110px; height: 110px; max-width: 35%; max-height: 110px; }
+  .landing-page > .about { padding-top: 42px; }
+  .landing-page.motion-ready .scroll-reveal { transform: translateY(16px); }
+  .landing-page.motion-ready .scroll-reveal.is-revealed { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-page.motion-ready .scroll-reveal { opacity: 1; transform: none; transition: none; }
+  .site-header.floral-navigation { transition: none; }
+}
