@@ -7,7 +7,10 @@ export default function Footer() {
     <footer id="contact">
       <div className="footer-top">
         <a className="footer-wordmark" href="#top">
-          <img src="/images/logos/conclave-logo.png" alt="Social Conclave" />
+          <div className="footer-logo-mark">
+            <img src="/images/logos/conclave-logo.png" alt="Social Conclave" />
+            <img className="footer-logo-lettering" src="/images/logos/conclave-logo.png" alt="" aria-hidden="true" />
+          </div>
           <span>2027</span>
         </a>
         <div className="footer-contact">

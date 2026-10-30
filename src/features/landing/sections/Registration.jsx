@@ -5,7 +5,7 @@ export default function Registration() {
   return (
     <section id="register" className="section join">
       <div>
-        <Label light>Your perspective belongs here</Label>
+        <Label>Your perspective belongs here</Label>
         <h2>
           Don’t just watch
           <br />

@@ -39,7 +39,7 @@ export default function Header() {
         ? getComputedStyle(surface).backgroundColor
         : getComputedStyle(document.body).backgroundColor;
       let rgb = colour.match(/[\d.]+/g)?.map(Number);
-      if (!rgb || rgb[3] === 0) rgb = [246, 245, 239];
+      if (!rgb || rgb[3] === 0) rgb = [252, 251, 255];
       if (surface?.dataset.themeStart && surface.dataset.themeEnd) {
         const channels = (hex) => hex.match(/[a-f\d]{2}/gi).map((part) => parseInt(part, 16));
         const from = channels(surface.dataset.themeStart);

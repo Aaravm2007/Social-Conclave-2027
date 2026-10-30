@@ -51,6 +51,7 @@ export default function Programme() {
         ))}
       </div>
       <div
+        key={day}
         className="programme-panel"
         id="day-panel"
         role="tabpanel"

@@ -30,7 +30,6 @@ export default function Hero() {
           <img src="/images/hero/floral-unai.png" width="360" height="121" alt="United Nations Academic Impact" />
         </div>
         <div className="floral-hero-content">
-          <p className="floral-edition">Mumbai, India · The tenth edition</p>
           <h1 id="hero-title"><span>Social</span><span>Conclave</span><span className="floral-title-year">27'</span></h1>
           <p className="floral-tagline">Bigger conversations.<br />Greater impact.</p>
           <div className="floral-date" aria-label="25 to 28 February 2027">

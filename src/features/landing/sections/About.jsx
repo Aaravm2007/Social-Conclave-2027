@@ -21,18 +21,14 @@ export default function About() {
           shaping our planet — and work towards solutions that reach beyond the
           room.
         </p>
-        <p>
-          An initiative of MPSTME, NMIMS. A community of curious minds. A shared
-          belief that change starts with showing up.
-        </p>
         <a className="text-link dark" href="#agenda">
           Explore what we stand for
         </a>
       </div>
       <div className="about-photo">
         <img
-          src="/images/events/conclave-960.webp"
-          srcSet="/images/events/conclave-960.webp 960w, /images/events/conclave-1920.webp 1920w"
+          src="/images/events/conclave-org-960.webp"
+          srcSet="/images/events/conclave-org-960.webp 960w, /images/events/conclave-org-1920.webp 1920w"
           sizes="(min-width: 701px) 45vw, 88vw"
           width="1920"
           height="683"

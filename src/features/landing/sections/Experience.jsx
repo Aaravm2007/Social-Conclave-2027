@@ -3,7 +3,7 @@ import Label from "../../../components/ui/Label.jsx";
 export default function Experience() {
   return (
     <section className="experience section" id="why">
-      <Label light>Leave with more than memories</Label>
+      <Label>Leave with more than memories</Label>
       <h2>
         Come for the ideas.
         <br />

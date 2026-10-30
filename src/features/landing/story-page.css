@@ -1,0 +1,131 @@
+/* The floral poster opens into a continuous white and lavender story. */
+:root { --blue: #55429b; --cream: #fcfbff; --ink: #29243f; background: #fcfbff; color: #29243f; }
+.landing-page { --story-progress: 0; }
+.landing-page::after {
+  content: ''; position: fixed; z-index: 100; inset: 0 0 auto; height: 2px;
+  background: #b7a0e7; transform: scaleX(var(--story-progress)); transform-origin: left;
+  pointer-events: none;
+}
+.landing-page > .hero.floral-hero { background: #004aad; }
+.landing-page .floral-hero-art { background-color: transparent; background-blend-mode: normal; }
+.landing-page > .ticker { background: #004aad; color: #e5ddf6; }
+.landing-page > .trust-strip {
+  background-color: #fcfbff;
+  background-image: linear-gradient(180deg, #004aad, #7973b9 38%, #ddd7f1 78%, #fcfbff);
+}
+.landing-page > .section:not(.agendas) .label { color: #75678c; }
+.landing-page > .section.experience {
+  background-color: #fcfbff;
+  background-image: linear-gradient(#eeeee5, #fcfbff 140px);
+}
+.landing-page .about-intro p, .landing-page .about-numbers span,
+.landing-page .guest-grid p, .landing-page .collaboration > div > p,
+.landing-page .day-intro p, .landing-page .timeline time, .landing-page .faq details > p { color: #746981; }
+.landing-page .about-intro p:first-child { color: #3d3157; }
+.landing-page .experience-grid .prize { box-shadow: inset 0 1px 0 #ffffffc0; }
+.landing-page .experience-grid .prize > span { color: #6c528d; }
+.landing-page .timeline li, .landing-page .experience-grid article,
+.landing-page .faq details, .landing-page .collab-signature { border-color: #77629526; }
+.landing-page .day-tabs button { color: #796b8d; }
+.landing-page .day-tabs button[aria-selected="true"] { color: #55429b; }
+.landing-page .programme-panel { animation: story-panel .55s cubic-bezier(.22, 1, .36, 1) both; }
+@keyframes story-panel { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.landing-page .join-card .join-price { color: #392a5b !important; }
+.landing-page .join-price span, .landing-page .join-card .price-note,
+.landing-page .join-card .join-note { color: #796b8d !important; }
+.landing-page .join-card ul { border-color: #77629526; }
+.landing-page .join-card .button { transition: background .3s, box-shadow .3s, transform .3s; }
+.landing-page .join-card .button:hover { background: #6b50ae; box-shadow: 0 8px 22px #55429b22; transform: translateY(-2px); }
+.site-header.floral-navigation.on-light { color: #392a5b; }
+.site-header.floral-navigation.on-light .navigation a[aria-current="location"] { color: #392a5b; }
+.landing-page .guest-controls { display: flex; align-items: center; justify-content: space-between; margin: -8px 0 24px; }
+.landing-page .guest-controls > span { color: #55429b; font-size: 12px; letter-spacing: .12em; font-variant-numeric: tabular-nums; }
+.landing-page .guest-controls > span > span { color: #9a8eac; margin-left: 10px; }
+.landing-page .guest-controls > div { display: flex; gap: 10px; }
+.landing-page .guest-controls button {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid #d8cce9;
+  background: #fcfbff; color: #55429b; font-size: 23px;
+  transition: background .25s, color .25s, transform .25s, opacity .25s;
+}
+.landing-page .guest-controls button:hover:not(:disabled) { background: #55429b; color: white; transform: translateY(-2px); }
+.landing-page .guest-controls button:disabled { opacity: .3; cursor: default; }
+.landing-page .guest-grid.guest-track {
+  display: grid; grid-template-columns: none; grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 72px) / 3); gap: 36px;
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory;
+  scrollbar-width: none; padding-bottom: 6px;
+}
+.landing-page .guest-track::-webkit-scrollbar { display: none; }
+.landing-page .guest-track > article, .landing-page .guest-track > article:first-child { grid-column: auto; scroll-snap-align: start; min-width: 0; }
+.landing-page .guest-track > article img, .landing-page .guest-track > article:first-child img {
+  aspect-ratio: 1.15; transition: filter .6s, transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+.landing-page .guest-track > article:hover img { transform: scale(.985); }
+.landing-page .guest-track:focus-visible { outline: 2px solid #947ab6; outline-offset: 6px; border-radius: 8px; }
+.landing-page .faq details[open] > p { animation: story-panel .4s ease both; }
+.landing-page.motion-ready .scroll-reveal { transition-duration: 1s; }
+.landing-page .floral-hero-content.scroll-reveal { transition-delay: .14s; }
+.landing-page .floral-footnote.scroll-reveal { transition-delay: .24s; }
+@supports (animation-timeline: view()) {
+  .landing-page .about-photo img { animation: story-photo linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+  @keyframes story-photo { from { filter: grayscale(1); } to { filter: grayscale(.2); } }
+}
+@media (max-width: 700px) {
+  .landing-page .guest-grid.guest-track { grid-auto-columns: 85%; gap: 18px; }
+  .landing-page .guest-controls { margin-top: 0; }
+  .landing-page .guest-controls button { width: 44px; height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-page .programme-panel, .landing-page .faq details[open] > p,
+  .landing-page .about-photo img { animation: none; }
+  .landing-page .guest-controls button, .landing-page .guest-track img,
+  .landing-page .join-card .button { transition: none; }
+  .landing-page .join-card .button:hover, .landing-page .guest-controls button:hover:not(:disabled),
+  .landing-page .guest-track > article:hover img { transform: none; }
+}
+
+/* Keep navigation controls beside the portraits, where the action happens. */
+.landing-page .guest-carousel { position: relative; container-type: inline-size; }
+.landing-page .guest-carousel .guest-controls { position: relative; z-index: 3; height: 22px; margin: 0 0 24px; }
+.landing-page .guest-carousel .guest-controls > div {
+  position: absolute; z-index: 2; left: 10px; right: 10px;
+  top: calc(46px + (100cqw - 72px) / 6 / 1.15);
+  transform: translateY(-50%); justify-content: space-between; pointer-events: none;
+}
+.landing-page .guest-carousel .guest-controls button {
+  pointer-events: auto; background: #fffffff0; border-color: #ffffffb0;
+  box-shadow: 0 3px 16px #15244828; backdrop-filter: blur(12px);
+}
+.landing-page .guest-carousel .guest-controls button:disabled { opacity: .45; }
+/* Navy type provides a clear, consistent reading voice on the light surfaces. */
+.landing-page > .section:not(.agendas) { color: #192f61; }
+.landing-page > .section:not(.agendas) h2 em,
+.landing-page .about-numbers strong, .landing-page .about-intro p:first-child,
+.landing-page .experience-grid .prize strong, .landing-page .experience-grid .prize > span,
+.landing-page .day-tabs button[aria-selected="true"] { color: #263f79; }
+.landing-page > .section:not(.agendas) .label,
+.landing-page .about-photo > span, .landing-page .day-intro > span,
+.landing-page .collab-signature, .landing-page .day-tabs button { color: #51658e; }
+.landing-page > .section:not(.agendas) .section-heading > p,
+.landing-page .about-intro p, .landing-page .about-numbers span,
+.landing-page .experience-grid p, .landing-page .experience-grid .prize p,
+.landing-page .guest-grid p, .landing-page .collaboration > div > p,
+.landing-page .day-intro p, .landing-page .timeline time,
+.landing-page .venue-details, .landing-page .faq details > p,
+.landing-page .join > div > p:not(.label) { color: #465b81; }
+.landing-page .join-card .join-price { color: #192f61 !important; }
+.landing-page .join-price span, .landing-page .join-card .price-note,
+.landing-page .join-card .join-note { color: #465b81 !important; }
+.site-header.floral-navigation.on-light,
+.site-header.floral-navigation.on-light .navigation a[aria-current="location"] { color: #192f61; }
+.landing-page ~ footer { color: #192f61; }
+.landing-page ~ footer .label, .landing-page ~ footer .footer-contact a,
+.landing-page ~ footer .footer-contact > div > span, .landing-page ~ footer .footer-social > a:last-child,
+.landing-page ~ footer .footer-wordmark > span, .landing-page ~ footer .footer-bottom,
+.landing-page ~ footer .footer-bottom strong { color: #465b81; }
+@media (max-width: 700px) {
+  .landing-page .guest-carousel .guest-controls > div { top: calc(46px + 85cqw / 2.3); left: 8px; right: calc(15% + 8px); }
+}
+
+.footer-logo-mark { position: relative; }
+.footer-logo-mark .footer-logo-lettering { position: absolute; inset: 0; width: 100%; filter: brightness(0); clip-path: inset(0 0 0 25%); }

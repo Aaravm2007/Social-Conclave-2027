@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./page-motion.css";
+import "./calm-page.css";
+import "./story-page.css";
 import Hero from "./sections/Hero.jsx";
 import BrandPartners from "./sections/BrandPartners.jsx";
 import About from "./sections/About.jsx";
@@ -16,12 +18,33 @@ export default function LandingPage() {
 
   useEffect(() => {
     const page = pageRef.current;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const distance = document.documentElement.scrollHeight - window.innerHeight;
+      page.style.setProperty("--story-progress", distance > 0 ? Math.min(1, window.scrollY / distance) : 0);
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    const observer = new ResizeObserver(schedule);
+    observer.observe(page);
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    update();
+    return () => {
+      cancelAnimationFrame(frame); observer.disconnect();
+      window.removeEventListener("scroll", schedule); window.removeEventListener("resize", schedule);
+    };
+  }, []);
+
+  useEffect(() => {
+    const page = pageRef.current;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const targets = page.querySelectorAll([
       ".trust-strip > *", ".section-heading", ".about > div",
       ".agenda-card", ".experience > .label", ".experience > h2",
-      ".experience-grid > article", ".programme-panel", ".guest-grid > article",
+      ".experience-grid > article", ".programme-panel",
       ".collaboration > .label", ".collaboration > div", ".join > div", ".faq > div",
+      ".day-tabs", ".venue-details", ".guest-carousel", ".floral-partners", ".floral-hero-content", ".floral-footnote",
     ].join(","));
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {

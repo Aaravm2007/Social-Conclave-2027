@@ -1,0 +1,100 @@
+/* A shared paper surface and reading rhythm; the agenda gallery retains its design. */
+.landing-page > .section:not(.agendas) {
+  background: #fcfbff;
+  color: #29243f;
+  padding: 110px max(6vw, calc((100vw - 1240px) / 2));
+}
+.landing-page > .section:not(.agendas) h2 {
+  font-size: clamp(36px, 4.1vw, 60px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  max-width: 780px;
+}
+.landing-page > .section:not(.agendas) h2 em { color: #7762a4; }
+.landing-page > .section:not(.agendas) .label { color: #75678c; font-size: 10px; font-weight: 500; letter-spacing: .14em; margin-bottom: 24px; }
+.landing-page > .section:not(.agendas) .section-heading { align-items: end; gap: 64px; margin-bottom: 48px; }
+.landing-page > .section:not(.agendas) .section-heading > p { max-width: 340px; color: #756c84; line-height: 1.8; }
+.landing-page > .about { gap: 48px 72px; }
+.landing-page .about-intro { padding-top: 36px; max-width: 490px; }
+.landing-page .about-intro p { line-height: 1.85; }
+.landing-page .about-intro .text-link { margin-top: 12px; }
+.landing-page .about-photo { grid-column: 1 / -1; }
+.landing-page .about-photo img { aspect-ratio: 3.3; border-radius: 8px; }
+.landing-page .about-photo > span { color: #80758e; font-size: 9px; }
+.landing-page .about-numbers { grid-column: 1 / -1; flex-direction: row; gap: 32px; }
+.landing-page .about-numbers > div { flex: 1; display: block; border: 0; padding: 0; }
+.landing-page .about-numbers strong { display: block; color: #544398; font-size: 42px; letter-spacing: -2px; margin-bottom: 10px; }
+.landing-page > .experience { padding-top: 120px; }
+.landing-page .experience-grid { grid-template-columns: 1fr 1.5fr; gap: 0 100px; margin-top: 56px; }
+.landing-page .experience-grid article { border: 0; border-bottom: 1px solid #29243f1c; padding: 26px 0; }
+.landing-page .experience-grid .prize { display: block; grid-column: auto; grid-row: span 3; align-self: center; border: 0; padding: 36px; background: #eee7fa; border-radius: 10px; }
+.landing-page .experience-grid .prize strong { color: #55429b; font-size: 84px; letter-spacing: -.06em; margin: 24px 0; }
+.landing-page .experience-grid .prize strong > span { display: block; margin: 14px 0 0; font-size: 16px; letter-spacing: .12em; }
+.landing-page .experience-grid .prize p { color: #746981; font-size: 14px; line-height: 1.8; }
+.landing-page .experience-grid h3 { font-size: 23px; margin: 0 0 12px; line-height: 1.3; }
+.landing-page .experience-grid p { color: #746981; font-size: 14px; max-width: 480px; line-height: 1.8; }
+.landing-page > .programme { padding-top: 52px; }
+.landing-page .day-tabs { gap: 8px; border: 0; padding: 6px; border-radius: 12px; background: #eee9f7; }
+.landing-page .day-tabs button { border: 0; border-radius: 8px; padding: 16px 20px; transition: background .3s, color .3s; }
+.landing-page .day-tabs button[aria-selected="true"] { background: #ffffff; color: #4c3987; box-shadow: 0 2px 8px #29243f09; }
+.landing-page .day-tabs strong { font-size: 21px; }
+.landing-page .day-tabs span { font-size: 9px; }
+.landing-page .day-intro > span { color: #796593; }
+.landing-page .programme-panel { gap: 64px; padding: 44px 0; }
+.landing-page .day-intro h3 { font-size: 30px; }
+.landing-page .timeline li { grid-template-columns: 105px 1fr; padding: 20px 0; border-color: #29243f18; }
+.landing-page .venue-details { border-color: #29243f20; color: #75678c; }
+.landing-page > .guests { padding-top: 72px; }
+.landing-page .guest-grid { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.landing-page .guest-grid img { aspect-ratio: 1.15; border-radius: 8px; }
+.landing-page .guest-grid h3 { font-size: 16px; font-weight: 500; margin-top: 18px; }
+.landing-page .guest-grid p { font-size: 12px; max-width: 280px; }
+.landing-page > .collaboration { padding-top: 48px; padding-bottom: 96px; }
+.landing-page .collaboration > div { align-items: center; }
+.landing-page .collaboration > div > p { line-height: 1.85; font-size: 14px; }
+.landing-page .collab-signature { font-size: 10px; font-weight: 500; color: #75628e; margin-top: 36px; border-color: #29243f18; }
+.landing-page .collab-signature span { color: #947ab6; }
+.landing-page > .section.join { background: #f0eafa; background-image: linear-gradient(#fcfbff, #f0eafa 140px); gap: 72px; }
+.landing-page .join > div > p:not(.label) { color: #746981; line-height: 1.9; }
+.landing-page .join-card { background: #ffffff; border: 1px solid #e3d9f1; border-radius: 12px; padding: 40px; }
+.landing-page .join-card .button { background: #55429b; color: #ffffff; border-color: #55429b; }
+.landing-page > .section.faq { background: #f0eafa; padding-top: 52px; padding-bottom: 100px; }
+.landing-page .faq summary { font-weight: 500; line-height: 1.5; padding: 24px 0; }
+.landing-page ~ footer { background: #f0eafa; color: #3a2b5b; border-top: 1px solid #3a2b5b20; }
+.landing-page ~ footer .label, .landing-page ~ footer .footer-contact a,
+.landing-page ~ footer .footer-contact > div > span, .landing-page ~ footer .footer-social > a:last-child,
+.landing-page ~ footer .footer-wordmark > span { color: #75628e; }
+.landing-page ~ footer .footer-social > a, .landing-page ~ footer .footer-bottom { border-color: #3a2b5b20; }
+
+@media (max-width: 700px) {
+  .landing-page > .section:not(.agendas) { padding: 68px 24px; }
+  .landing-page > .section:not(.agendas) h2 { font-size: 38px; }
+  .landing-page > .section:not(.agendas) .section-heading { margin-bottom: 34px; }
+  .landing-page .about-intro { padding-top: 26px; }
+  .landing-page .about-photo img { aspect-ratio: 1.8; }
+  .landing-page .about-numbers { gap: 22px; flex-wrap: wrap; }
+  .landing-page .about-numbers > div { min-width: 88px; }
+  .landing-page .about-numbers strong { font-size: 34px; min-width: 0; }
+  .landing-page .about-numbers span { font-size: 10px; }
+  .landing-page .experience-grid { grid-template-columns: 1fr; gap: 0; margin-top: 36px; }
+  .landing-page .experience-grid .prize { display: block; grid-column: auto; grid-row: auto; padding: 28px; margin-bottom: 12px; }
+  .landing-page .experience-grid .prize strong { font-size: 64px; }
+  .landing-page .experience-grid .prize strong > span { display: inline; margin-left: 14px; font-size: 14px; }
+  .landing-page .experience-grid h3 { font-size: 22px; }
+  .landing-page > .programme, .landing-page > .collaboration, .landing-page > .faq { padding-top: 28px; }
+  .landing-page .day-tabs { gap: 4px; }
+  .landing-page .day-tabs button { padding: 12px 6px; }
+  .landing-page .day-tabs strong { font-size: 17px; }
+  .landing-page .programme-panel { gap: 24px; padding: 28px 0; }
+  .landing-page .timeline li { grid-template-columns: 84px 1fr; }
+  .landing-page .guest-grid { gap: 28px 18px; grid-template-columns: repeat(2, 1fr); }
+  .landing-page .guest-grid > article:first-child { grid-column: 1 / -1; }
+  .landing-page .guest-grid > article:first-child img { aspect-ratio: 1.5; }
+  .landing-page .guest-grid h3 { font-size: 14px; }
+  .landing-page .guest-grid p { font-size: 11px; }
+  .landing-page .join-card { padding: 28px 24px; margin-top: 36px; }
+  .landing-page .collab-signature { font-size: 9px; line-height: 1.8; }
+  .landing-page .collab-signature span { margin: 0 8px; }
+}
+
+.landing-page ~ footer .footer-bottom, .landing-page ~ footer .footer-bottom strong { color: #75628e; }
