@@ -1,42 +1,61 @@
 # Social Conclave 2027
 
-React website built with Vite.
+A React/Vite landing page with a static production build. Requires Node.js 24 or newer; local development and CI use `.nvmrc` (Node.js 24).
 
-## Local development
-
-Use Node.js 24 (`nvm use` if you use nvm), then:
+## Start locally
 
 ```sh
+nvm use
 npm ci
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3000. `nvm use` is optional if Node.js 24 is already installed.
 
-## Production checks and preview
+## Validate the production website
 
 ```sh
-npm run lint -- --deny-warnings
-npm run build
-npm run preview
+npm run check
 ```
 
-The preview at http://localhost:3000 serves the production build. Stop the development server first if it is using that port.
+This runs strict linting, builds `dist/`, then starts an isolated preview on port 4173 and verifies the homepage and every generated asset. It stops that preview automatically. Set `SMOKE_PORT` if 4173 is already in use.
+
+To review the finished build yourself, run `npm run preview` and open http://localhost:3000. Stop the development server first if it is using that port.
+
+## Repository layout
+
+```text
+src/
+  app/                  Application composition
+  components/
+    layout/             Navigation and footer
+    ui/                 Shared label and social icons
+  features/landing/
+    data/               Event content, navigation, FAQs
+    sections/           Individual landing-page sections
+    LandingPage.jsx     Page composition
+  styles/               Shared site styling
+  main.jsx              Browser entry point
+public/images/
+  agendas/              Responsive agenda artwork
+  events/               Responsive event photography
+  guests/               Responsive guest portraits
+  logos/                Logos and favicon used by the site
+assets/source-images/   Original and retired artwork; excluded from dist
+infra/ci/               CI implementation and production smoke test
+.github/workflows/      GitHub-required workflow entry point
+docs/                   Architecture and deployment documentation
+  design/               Artwork provenance, prompts, enhancement reports
+```
 
 ## Continuous integration
 
-GitHub Actions runs `.github/workflows/ci.yml` on every push and pull request, or manually from the Actions tab. It installs exact dependencies from the lockfile, rejects lint errors and warnings, and builds the production website. Successful runs save `dist/` as the `website-dist` artifact for 14 days.
+Every push, pull request, and manual run starts `.github/workflows/ci.yml`. It checks out the repository and calls the local composite action in `infra/ci/action.yml`. That action installs locked dependencies, lints, builds, tests the production output, and retains the `website-dist` artifact for 14 days. It needs no deployment credentials and does not publish the website.
 
-After pushing this workflow, require the **Lint and production build** check in the repository's branch protection settings to prevent merging failing changes.
+After the workflow has run on GitHub, require **Lint and production build** in your branch protection rules. See [CI documentation](infra/ci/README.md).
 
-## Deployment later
+## Editing and deployment
 
-Configure a static website host with `npm ci` as the install command, `npm run build` as the build command, and `dist` as the output directory. CI prepares this output but does not publish it. No deployment credentials are needed yet.
+Change event content in `src/features/landing/data/content.js`, FAQs in `data/faqs.js`, and section composition in `src/features/landing/LandingPage.jsx`. Registration currently opens an organiser email enquiry; no payment gateway or QR code is included.
 
-Before launch, replace placeholder event content in `src/data/content.js`, including the registration link. If hosting under a subdirectory, configure Vite's `base` for that path before building.
-
-## Landing page content and artwork
-
-The landing page is composed in `src/App.jsx` with responsive styles in `src/App.css`. Event details and agenda briefs come from `src/data/content.js`. Registration currently opens an organiser email enquiry; no checkout or QR code is included. Instagram and LinkedIn links appear in the footer.
-
-`public/images/` contains locally optimised artwork supplied by the committee, plus logos, past-guest portraits, and an event image extracted from the supplied information booklet. Past guests are explicitly labelled as past participants. Study guides and submission URLs remain pending and are described in the FAQ without publishing placeholder links.
+See [architecture](docs/architecture.md), [deployment](docs/deployment.md), and [image provenance](docs/design/image-enhancement.md).

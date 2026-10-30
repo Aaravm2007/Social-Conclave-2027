@@ -1,0 +1,241 @@
+[
+  {
+    "original": "guest-0.jpg",
+    "original_size": [
+      190,
+      190
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-0-512.webp",
+      "/images/guests/guest-0-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-1.jpg",
+    "original_size": [
+      253,
+      252
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-1-512.webp",
+      "/images/guests/guest-1-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-2.jpg",
+    "original_size": [
+      257,
+      256
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-2-512.webp",
+      "/images/guests/guest-2-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-3.jpg",
+    "original_size": [
+      227,
+      228
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-3-512.webp",
+      "/images/guests/guest-3-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-4.jpg",
+    "original_size": [
+      189,
+      188
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-4-512.webp",
+      "/images/guests/guest-4-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-5.jpg",
+    "original_size": [
+      218,
+      218
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-5-512.webp",
+      "/images/guests/guest-5-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-6.jpg",
+    "original_size": [
+      219,
+      219
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-6-512.webp",
+      "/images/guests/guest-6-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-7.jpg",
+    "original_size": [
+      196,
+      196
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-7-512.webp",
+      "/images/guests/guest-7-1024.webp"
+    ]
+  },
+  {
+    "original": "guest-8.jpg",
+    "original_size": [
+      204,
+      204
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/guests/guest-8-512.webp",
+      "/images/guests/guest-8-1024.webp"
+    ]
+  },
+  {
+    "original": "conclave.jpg",
+    "original_size": [
+      720,
+      256
+    ],
+    "enhanced_size": [
+      1920,
+      683
+    ],
+    "files": [
+      "/images/events/conclave-960.webp",
+      "/images/events/conclave-1920.webp"
+    ]
+  },
+  {
+    "original": "social-impact.png",
+    "original_size": [
+      158,
+      158
+    ],
+    "enhanced_size": [
+      1024,
+      1024
+    ],
+    "files": [
+      "/images/logos/social-impact.png"
+    ]
+  },
+  {
+    "original": "agenda-0.webp",
+    "original_size": [
+      800,
+      420
+    ],
+    "enhanced_size": [
+      1600,
+      840
+    ],
+    "files": [
+      "/images/agendas/agenda-0-800.webp",
+      "/images/agendas/agenda-0-1600.webp"
+    ]
+  },
+  {
+    "original": "agenda-1.webp",
+    "original_size": [
+      800,
+      420
+    ],
+    "enhanced_size": [
+      1600,
+      840
+    ],
+    "files": [
+      "/images/agendas/agenda-1-800.webp",
+      "/images/agendas/agenda-1-1600.webp"
+    ]
+  },
+  {
+    "original": "agenda-2.webp",
+    "original_size": [
+      800,
+      420
+    ],
+    "enhanced_size": [
+      1600,
+      840
+    ],
+    "files": [
+      "/images/agendas/agenda-2-800.webp",
+      "/images/agendas/agenda-2-1600.webp"
+    ]
+  },
+  {
+    "original": "agenda-3.webp",
+    "original_size": [
+      800,
+      420
+    ],
+    "enhanced_size": [
+      1600,
+      840
+    ],
+    "files": [
+      "/images/agendas/agenda-3-800.webp",
+      "/images/agendas/agenda-3-1600.webp"
+    ]
+  },
+  {
+    "original": "agenda-4.webp",
+    "original_size": [
+      800,
+      420
+    ],
+    "enhanced_size": [
+      1600,
+      840
+    ],
+    "files": [
+      "/images/agendas/agenda-4-800.webp",
+      "/images/agendas/agenda-4-1600.webp"
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+.hero h1.stretch-title {
+  width: 100%;
+  margin: 8px 0 0;
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+}
+.stretch-title-art {
+  display: block;
+  width: calc(100% + 5.2vw);
+  max-width: none;
+  height: auto;
+  margin-left: -5.2vw;
+  overflow: visible;
+}
+.stretch-edition {
+  fill: #d7e6fb;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+.hero-copy:has(.stretch-title) .hero-tagline {
+  margin-top: 28px;
+}
+@media (max-width: 700px) {
+  .hero h1.stretch-title {
+    margin-top: 36px;
+  }
+  .stretch-title-art {
+    width: calc(100% + 24px);
+    margin-left: -24px;
+  }
+  .stretch-edition {
+    font-size: 23px;
+    letter-spacing: 2px;
+  }
+  .hero-copy:has(.stretch-title) .hero-tagline {
+    margin-top: 32px;
+  }
+}

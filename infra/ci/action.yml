@@ -1,0 +1,29 @@
+name: Website validation
+description: Install locked dependencies, lint, build, smoke-test, and retain the static website.
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+    - name: Install locked dependencies
+      shell: bash
+      run: npm ci
+    - name: Lint application and infrastructure
+      shell: bash
+      run: npm run lint
+    - name: Build production website
+      shell: bash
+      run: npm run build
+    - name: Smoke-test the production website
+      shell: bash
+      run: npm run test:smoke
+    - name: Save deployable website
+      uses: actions/upload-artifact@v4
+      with:
+        name: website-dist
+        path: dist/
+        if-no-files-found: error
+        retention-days: 14
