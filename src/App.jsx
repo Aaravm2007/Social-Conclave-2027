@@ -72,6 +72,8 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("about");
   const [navOutline, setNavOutline] = useState(null);
   const navigationRef = useRef(null);
+  const [compactNav, setCompactNav] = useState(false);
+  const [darkNav, setDarkNav] = useState(true);
 
   useEffect(() => {
     let frame = 0;
@@ -87,6 +89,21 @@ export default function App() {
         }
       }
       setActiveSection(current);
+      setCompactNav(
+        document.getElementById("top").getBoundingClientRect().bottom <= 110,
+      );
+      const surface = [
+        ...document.querySelectorAll("main > section, main > .ticker, footer"),
+      ].find((element) => {
+        const rect = element.getBoundingClientRect();
+        return rect.top <= 50 && rect.bottom > 50;
+      });
+      let colour = surface
+        ? getComputedStyle(surface).backgroundColor
+        : getComputedStyle(document.body).backgroundColor;
+      let rgb = colour.match(/[\d.]+/g)?.map(Number);
+      if (!rgb || rgb[3] === 0) rgb = [246, 245, 239];
+      setDarkNav(rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722 < 140);
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(updateSection);
@@ -117,13 +134,15 @@ export default function App() {
     observer.observe(navigation);
     for (const link of navigation.querySelectorAll("a")) observer.observe(link);
     return () => observer.disconnect();
-  }, [activeSection, menu]);
+  }, [activeSection, menu, compactNav]);
   return (
     <>
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <header className="site-header">
+      <header
+        className={`site-header${compactNav ? " is-compact" : ""}${darkNav ? " on-dark" : " on-light"}`}
+      >
         <a className="wordmark" href="#top" aria-label="Social Conclave home">
           <img src="/images/conclave-favicon.png" alt="" />
           <span>
@@ -234,7 +253,10 @@ export default function App() {
           />
           <img
             className="impact-logo"
-            src="/images/social-impact.png"
+            src="/images/enhanced/social-impact.png"
+            width="1024"
+            height="1024"
+            decoding="async"
             alt="Social Impact"
           />
           <img
@@ -245,7 +267,7 @@ export default function App() {
         </section>
         <section id="about" className="section about">
           <div>
-            <Label>01 / More than a conference</Label>
+            <Label>More than a conference</Label>
             <h2>
               The future needs
               <br />
@@ -272,8 +294,13 @@ export default function App() {
           </div>
           <div className="about-photo">
             <img
-              src="/images/conclave.jpg"
-              alt="Delegates together at a previous Social Conclave"
+              src="/images/enhanced/conclave-960.webp"
+              srcSet="/images/enhanced/conclave-960.webp 960w, /images/enhanced/conclave-1920.webp 1920w"
+              sizes="(min-width: 701px) 45vw, 88vw"
+              width="1920"
+              height="683"
+              decoding="async"
+              alt="Social Conclave booklet and materials at a previous edition"
               loading="lazy"
             />
             <span>Different perspectives. One shared future.</span>
@@ -298,7 +325,7 @@ export default function App() {
         <section id="agenda" className="section agendas">
           <div className="section-heading">
             <div>
-              <Label>02 / Choose your conversation</Label>
+              <Label>Choose your conversation</Label>
               <h2>
                 Five agendas.
                 <br />
@@ -315,7 +342,12 @@ export default function App() {
               <article className={`agenda-card agenda-${i}`} key={a.num}>
                 <div className="agenda-art">
                   <img
-                    src={`/images/agenda-${i}.webp`}
+                    src={`/images/enhanced/agenda-${i}-800.webp`}
+                    srcSet={`/images/enhanced/agenda-${i}-800.webp 800w, /images/enhanced/agenda-${i}-1600.webp 1600w`}
+                    sizes="(min-width: 1051px) 28vw, (min-width: 701px) 43vw, 88vw"
+                    width="1600"
+                    height="840"
+                    decoding="async"
                     loading="lazy"
                     alt={
                       [
@@ -351,7 +383,7 @@ export default function App() {
           </div>
         </section>
         <section className="experience section" id="why">
-          <Label light>03 / Leave with more than memories</Label>
+          <Label light>Leave with more than memories</Label>
           <h2>
             Come for the ideas.
             <br />
@@ -398,7 +430,7 @@ export default function App() {
         <section id="schedule" className="section programme">
           <div className="section-heading">
             <div>
-              <Label>04 / Make four days count</Label>
+              <Label>Make four days count</Label>
               <h2>
                 Step into
                 <br />
@@ -487,7 +519,7 @@ export default function App() {
         <section id="dignitaries" className="section guests">
           <div className="section-heading">
             <div>
-              <Label>05 / A legacy of perspectives</Label>
+              <Label>A legacy of perspectives</Label>
               <h2>
                 They’ve been
                 <br />
@@ -503,7 +535,12 @@ export default function App() {
             {DIGNITARIES.map((p, i) => (
               <article key={p.name}>
                 <img
-                  src={`/images/guest-${i}.jpg`}
+                  src={`/images/enhanced/guest-${i}-512.webp`}
+                  srcSet={`/images/enhanced/guest-${i}-512.webp 512w, /images/enhanced/guest-${i}-1024.webp 1024w`}
+                  sizes="(min-width: 1051px) 17vw, 28vw"
+                  width="1024"
+                  height="1024"
+                  decoding="async"
                   alt={p.name}
                   loading="lazy"
                 />
@@ -534,7 +571,7 @@ export default function App() {
         </section>
         <section id="register" className="section join">
           <div>
-            <Label light>06 / Your perspective belongs here</Label>
+            <Label light>Your perspective belongs here</Label>
             <h2>
               Don’t just watch
               <br />
@@ -575,7 +612,7 @@ export default function App() {
         </section>
         <section id="faq" className="section faq">
           <div>
-            <Label>07 / Before you join</Label>
+            <Label>Before you join</Label>
             <h2>
               A few things
               <br />

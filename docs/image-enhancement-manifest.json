@@ -1,0 +1,129 @@
+[
+  {
+    "name": "guest-0.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-0-512.webp",
+      "/images/enhanced/guest-0-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-1.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-1-512.webp",
+      "/images/enhanced/guest-1-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-2.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-2-512.webp",
+      "/images/enhanced/guest-2-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-3.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-3-512.webp",
+      "/images/enhanced/guest-3-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-4.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-4-512.webp",
+      "/images/enhanced/guest-4-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-5.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-5-512.webp",
+      "/images/enhanced/guest-5-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-6.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-6-512.webp",
+      "/images/enhanced/guest-6-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-7.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-7-512.webp",
+      "/images/enhanced/guest-7-1024.webp"
+    ]
+  },
+  {
+    "name": "guest-8.jpg",
+    "prompt": "Conservative high resolution restoration and upscale of this exact small portrait photograph to 1024x1024. Preserve this person's exact identity, facial geometry, expression, age, hair, skin texture, clothes, original colours, lighting, background, framing and pose. Reduce compression artifacts and pixelation and restore natural photographic sharpness. No beauty retouching, no artificial skin smoothing, no stylization, no face reshaping, no new text, no added objects. Same photograph, carefully restored. Do not change the crop.",
+    "outputs": [
+      "/images/enhanced/guest-8-512.webp",
+      "/images/enhanced/guest-8-1024.webp"
+    ]
+  },
+  {
+    "name": "conclave.jpg",
+    "prompt": "Conservative high-resolution restoration and upscale of the supplied exact website image, output landscape 2048 pixels wide. Preserve the full original composition, colours, proportions, all objects, text and design exactly. Remove compression artifacts, improve edge definition and texture clarity. Do not redesign, restyle, crop, add, remove, or rearrange anything. Preserve any lettering exactly as supplied. Same image, higher resolution. Keep its original landscape aspect ratio.",
+    "outputs": [
+      "/images/enhanced/conclave-960.webp",
+      "/images/enhanced/conclave-1920.webp"
+    ]
+  },
+  {
+    "name": "social-impact.png",
+    "prompt": "Upscale and clean this EXACT Social Impact logo to a crisp 1024 pixel transparent PNG. Preserve exact green colour, circular lettering SOCIAL, globe and laurel shape, bold IMPACT word and original composition. Do not redesign or invent details. Remove compression jaggies only. Transparent background preserved. No new elements.",
+    "outputs": [
+      "/images/enhanced/social-impact.png"
+    ]
+  },
+  {
+    "name": "agenda-0.webp",
+    "prompt": "Conservative high-resolution restoration and upscale of the supplied exact website image, output landscape 2048 pixels wide. Preserve the full original composition, colours, proportions, all objects, text and design exactly. Remove compression artifacts, improve edge definition and texture clarity. Do not redesign, restyle, crop, add, remove, or rearrange anything. Preserve any lettering exactly as supplied. Same image, higher resolution. Keep its original landscape aspect ratio.",
+    "outputs": [
+      "/images/enhanced/agenda-0-800.webp",
+      "/images/enhanced/agenda-0-1600.webp"
+    ]
+  },
+  {
+    "name": "agenda-1.webp",
+    "prompt": "Conservative high-resolution restoration and upscale of the supplied exact website image, output landscape 2048 pixels wide. Preserve the full original composition, colours, proportions, all objects, text and design exactly. Remove compression artifacts, improve edge definition and texture clarity. Do not redesign, restyle, crop, add, remove, or rearrange anything. Preserve any lettering exactly as supplied. Same image, higher resolution. Keep its original landscape aspect ratio.",
+    "outputs": [
+      "/images/enhanced/agenda-1-800.webp",
+      "/images/enhanced/agenda-1-1600.webp"
+    ]
+  },
+  {
+    "name": "agenda-2.webp",
+    "prompt": "Conservative high-resolution restoration and upscale of the supplied exact website image, output landscape 2048 pixels wide. Preserve the full original composition, colours, proportions, all objects, text and design exactly. Remove compression artifacts, improve edge definition and texture clarity. Do not redesign, restyle, crop, add, remove, or rearrange anything. Preserve any lettering exactly as supplied. Same image, higher resolution. Keep its original landscape aspect ratio.",
+    "outputs": [
+      "/images/enhanced/agenda-2-800.webp",
+      "/images/enhanced/agenda-2-1600.webp"
+    ]
+  },
+  {
+    "name": "agenda-3.webp",
+    "prompt": "Conservative high-resolution restoration and upscale of the supplied exact website image, output landscape 2048 pixels wide. Preserve the full original composition, colours, proportions, all objects, text and design exactly. Remove compression artifacts, improve edge definition and texture clarity. Do not redesign, restyle, crop, add, remove, or rearrange anything. Preserve any lettering exactly as supplied. Same image, higher resolution. Keep its original landscape aspect ratio.",
+    "outputs": [
+      "/images/enhanced/agenda-3-800.webp",
+      "/images/enhanced/agenda-3-1600.webp"
+    ]
+  },
+  {
+    "name": "agenda-4.webp",
+    "prompt": "Conservative high-resolution restoration and upscale of the supplied exact website image, output landscape 2048 pixels wide. Preserve the full original composition, colours, proportions, all objects, text and design exactly. Remove compression artifacts, improve edge definition and texture clarity. Do not redesign, restyle, crop, add, remove, or rearrange anything. Preserve any lettering exactly as supplied. Same image, higher resolution. Keep its original landscape aspect ratio.",
+    "outputs": [
+      "/images/enhanced/agenda-4-800.webp",
+      "/images/enhanced/agenda-4-1600.webp"
+    ]
+  }
+]
