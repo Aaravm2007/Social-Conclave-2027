@@ -1,5 +1,7 @@
 import { EVENT, LOCATIONS, CONTACTS } from '../data/content.js'
 
+const copyrightYear = new Date().getFullYear()
+
 export default function Footer() {
   return (
     <footer id="contact" className="site-footer">
@@ -44,7 +46,7 @@ export default function Footer() {
 
       <div className="footer-legal">
         <div className="wrap">
-          <span>© {new Date().getFullYear()} {EVENT.name}</span>
+          <span>© {copyrightYear} {EVENT.name}</span>
           <a href="#top">Back to top ↑</a>
         </div>
       </div>

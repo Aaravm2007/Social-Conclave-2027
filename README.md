@@ -1,16 +1,42 @@
-# React + Vite
+# Social Conclave 2027
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React website built with Vite.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 24 (`nvm use` if you use nvm), then:
 
-## React Compiler
+```sh
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open http://localhost:3000.
 
-## Expanding the Oxlint configuration
+## Production checks and preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```sh
+npm run lint -- --deny-warnings
+npm run build
+npm run preview
+```
+
+The preview at http://localhost:3000 serves the production build. Stop the development server first if it is using that port.
+
+## Continuous integration
+
+GitHub Actions runs `.github/workflows/ci.yml` on every push and pull request, or manually from the Actions tab. It installs exact dependencies from the lockfile, rejects lint errors and warnings, and builds the production website. Successful runs save `dist/` as the `website-dist` artifact for 14 days.
+
+After pushing this workflow, require the **Lint and production build** check in the repository's branch protection settings to prevent merging failing changes.
+
+## Deployment later
+
+Configure a static website host with `npm ci` as the install command, `npm run build` as the build command, and `dist` as the output directory. CI prepares this output but does not publish it. No deployment credentials are needed yet.
+
+Before launch, replace placeholder event content in `src/data/content.js`, including the registration link. If hosting under a subdirectory, configure Vite's `base` for that path before building.
+
+## Landing page content and artwork
+
+The landing page is composed in `src/App.jsx` with responsive styles in `src/App.css`. Event details and agenda briefs come from `src/data/content.js`. Registration currently opens an organiser email enquiry; no checkout or QR code is included. Instagram and LinkedIn links appear in the footer.
+
+`public/images/` contains locally optimised artwork supplied by the committee, plus logos, past-guest portraits, and an event image extracted from the supplied information booklet. Past guests are explicitly labelled as past participants. Study guides and submission URLs remain pending and are described in the FAQ without publishing placeholder links.

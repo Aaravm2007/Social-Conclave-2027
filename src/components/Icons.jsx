@@ -17,12 +17,3 @@ export function ImageIcon() {
     </svg>
   )
 }
-
-export const NAV_LINKS = [
-  ['About', '#about'],
-  ['Initiatives', '#initiatives'],
-  ['Events', '#events'],
-  ['Journey', '#journey'],
-  ['Gallery', '#gallery'],
-  ['Contact', '#contact'],
-]

@@ -23,13 +23,12 @@ export default function Register() {
           <p className="eyebrow">{FEES.label}</p>
           <p className="fee-amount">{FEES.amount}</p>
           <p className="fee-note">{FEES.gst}</p>
-          <div className="qr-slot"><span className="ph">[QR code]</span></div>
           {EVENT.registerUrl ? (
             <a className="btn btn-primary" href={EVENT.registerUrl} target="_blank" rel="noopener noreferrer">
               Register now →
             </a>
           ) : (
-            <span className="ph">[Paste registration link in content.js]</span>
+            <a className="btn btn-primary" href="mailto:daneeka.roy81@nmims.in">Enquire about registration →</a>
           )}
         </div>
       </div>
