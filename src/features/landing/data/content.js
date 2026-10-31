@@ -184,7 +184,7 @@ export const LOCATIONS = [
   {
     label: "Day 1",
     venue:
-      "NMIMS, V. L, Pherozeshah Mehta Rd, opp. Mithibai College, Vile Parle West, Mumbai, Maharashtra 400056.",
+      "NMIMS Jyoti Dalal School of Liberal Arts, V. L. Mehta Road, Vile Parle West, Mumbai, Maharashtra 400056.",
   },
   {
     label: "Days 2, 3 & 4",

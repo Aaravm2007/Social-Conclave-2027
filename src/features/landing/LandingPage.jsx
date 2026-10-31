@@ -45,7 +45,7 @@ export default function LandingPage() {
       ".agenda-card", ".experience-heading > div",
       ".experience-grid > article", ".programme-panel",
       ".collaboration > .label", ".collaboration > div", ".join > div", ".faq > div",
-      ".day-tabs", ".venue-details", ".guest-carousel", ".floral-partners", ".floral-hero-content", ".floral-footnote",
+      ".day-tabs", ".visit-section", ".guest-carousel", ".floral-partners", ".floral-hero-content", ".floral-footnote",
     ].join(","));
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {

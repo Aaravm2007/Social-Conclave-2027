@@ -1,7 +1,8 @@
 import "./programme-tabs.css";
+import VenueMap from "./VenueMap.jsx";
 import { useState } from "react";
 import Label from "../../../components/ui/Label.jsx";
-import { SCHEDULE, LOCATIONS } from "../data/content.js";
+import { SCHEDULE } from "../data/content.js";
 
 export default function Programme() {
   const [day, setDay] = useState(0);
@@ -59,7 +60,7 @@ export default function Programme() {
         aria-labelledby={`day-tab-${day}`}
       >
         <div className="day-intro">
-          <span>0{day + 1} / 04</span>
+
           <h3>
             {
               [
@@ -81,19 +82,7 @@ export default function Programme() {
           ))}
         </ol>
       </div>
-      <details className="venue-details">
-        <summary>
-          Plan your visit — venues & addresses <span>+</span>
-        </summary>
-        <div>
-          {LOCATIONS.map((x) => (
-            <article key={x.label}>
-              <h3>{x.label}</h3>
-              <p>{x.venue}</p>
-            </article>
-          ))}
-        </div>
-      </details>
+      <VenueMap day={day} />
     </section>
   );
 }
