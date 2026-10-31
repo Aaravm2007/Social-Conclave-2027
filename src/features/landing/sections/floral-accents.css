@@ -1,0 +1,48 @@
+/* Stems extend beyond the viewport; the flowers grow into the reading space. */
+.landing-page > .section.floral-chapter { position: relative; isolation: isolate; overflow: visible; }
+.floral-accent { display: block; position: absolute; pointer-events: none; user-select: none; }
+.floral-accent img {
+  width: 100%; height: auto;
+  transform-origin: 90% 94%;
+  animation: page-flower-breathe var(--breath-duration, 11s) cubic-bezier(.45, 0, .55, 1) infinite;
+  animation-delay: var(--breath-phase, 0s);
+  animation-play-state: paused;
+}
+.floral-accent.is-in-view img { animation-play-state: running; }
+.landing-page .experience-heading { position: relative; display: block; }
+.landing-page .experience-heading > div { max-width: calc(100% - 240px); }
+.landing-page .floral-accent--experience {
+  width: 360px;
+  top: -100px;
+  right: calc(-1 * var(--page-gutter) - 20px);
+  transform: rotate(-40deg);
+  --breath-duration: 5.5s;
+  --breath-phase: -4s;
+}
+.landing-page .join-intro { position: relative; padding-bottom: 240px; }
+.landing-page .floral-accent--invitation {
+  width: 450px;
+  bottom: -20px;
+  left: calc(-1 * var(--page-gutter) - 24px);
+  transform: scaleX(-1) rotate(-25deg);
+  --breath-duration: 12s;
+  --breath-phase: -6s;
+}
+@keyframes page-flower-breathe {
+  0%, 100% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(1deg) scale(1.04); }
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  .landing-page .experience-heading > div { max-width: calc(100% - 175px); }
+  .landing-page .floral-accent--experience { width: 300px; top: -80px; }
+}
+@media (max-width: 700px) {
+  .landing-page .experience-heading > div { max-width: 100%; padding-top: 130px; }
+  .landing-page .floral-accent--experience { width: 280px; top: -48px; right: -34px; transform: rotate(-15deg); }
+  .landing-page .join-intro { padding-bottom: 280px; }
+  .landing-page .floral-accent--invitation { width: 330px; bottom: -10px; left: -44px; }
+  .landing-page .experience-grid { margin-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floral-accent img { animation: none; }
+}

@@ -13,7 +13,7 @@ export const FAQS = [
   ],
   [
     "How can I join?",
-    "Contact the organising team using the email or phone links below for registration details. Online payment is not available on this website.",
+    "Contact the organising team at contact@socialconclave.org for registration details. Online payment is not available on this website.",
   ],
   [
     "Where can I find study guides and submission links?",

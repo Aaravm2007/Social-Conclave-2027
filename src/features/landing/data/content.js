@@ -260,17 +260,4 @@ export const FEES = {
     "Your registration helps us build an impactful, large-scale platform that amplifies youth voices and brings social change to life.",
 };
 
-export const CONTACTS = [
-  {
-    name: "Daneeka Roy",
-    role: "Vice-Chairperson, Social Conclave",
-    phone: "+91 99309 77730",
-    email: "daneeka.roy81@nmims.in",
-  },
-  {
-    name: "Shaad Naqvi",
-    role: "Fest In-Charge, Social Conclave",
-    phone: "+91 91376 43696",
-    email: "shaadalinaqvi.syed156@nmims.in",
-  },
-];
+export const CONTACT_EMAIL = "contact@socialconclave.org";

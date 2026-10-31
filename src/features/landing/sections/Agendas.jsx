@@ -1,3 +1,4 @@
+import "./agenda-layout.css";
 import Label from "../../../components/ui/Label.jsx";
 import { AGENDAS } from "../data/content.js";
 

@@ -1,10 +1,11 @@
+import FloralAccent from "./FloralAccent.jsx";
 import Label from "../../../components/ui/Label.jsx";
-import { FEES, CONTACTS } from "../data/content.js";
+import { FEES, CONTACT_EMAIL } from "../data/content.js";
 
 export default function Registration() {
   return (
-    <section id="register" className="section join">
-      <div>
+    <section id="register" className="section join floral-chapter">
+      <div className="join-intro">
         <Label>Your perspective belongs here</Label>
         <h2>
           Don’t just watch
@@ -18,6 +19,7 @@ export default function Registration() {
           <br />
           who believe we can do better, together.
         </p>
+        <FloralAccent variant="invitation" />
       </div>
       <div className="join-card">
         <span className="label">EARLY BIRD PARTICIPATION</span>
@@ -32,7 +34,7 @@ export default function Registration() {
         </ul>
         <a
           className="button"
-          href={`mailto:${CONTACTS[0].email}?subject=Social%20Conclave%202027%20Registration%20Enquiry`}
+          href={`mailto:${CONTACT_EMAIL}?subject=Social%20Conclave%202027%20Registration%20Enquiry`}
         >
           Enquire about registration
         </a>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import "./page-motion.css";
 import "./calm-page.css";
 import "./story-page.css";
+import "./reading-rhythm.css";
 import Hero from "./sections/Hero.jsx";
 import BrandPartners from "./sections/BrandPartners.jsx";
 import About from "./sections/About.jsx";
@@ -41,7 +42,7 @@ export default function LandingPage() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const targets = page.querySelectorAll([
       ".trust-strip > *", ".section-heading", ".about > div",
-      ".agenda-card", ".experience > .label", ".experience > h2",
+      ".agenda-card", ".experience-heading > div",
       ".experience-grid > article", ".programme-panel",
       ".collaboration > .label", ".collaboration > div", ".join > div", ".faq > div",
       ".day-tabs", ".venue-details", ".guest-carousel", ".floral-partners", ".floral-hero-content", ".floral-footnote",

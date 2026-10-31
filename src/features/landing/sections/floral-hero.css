@@ -24,13 +24,12 @@
   mask-image: linear-gradient(transparent, #000 12%, #000 82%, transparent);
   pointer-events: none;
   transform: scale(1.06);
-  animation: floral-breathe 25s ease-in-out infinite;
+  animation: floral-breathe 11s cubic-bezier(.45, 0, .55, 1) infinite;
   will-change: transform;
 }
 @keyframes floral-breathe {
   0%, 100% { transform: scale(1.06) translate(0, 0); }
-  33% { transform: scale(1.09) translate(-1vw, 1vh); }
-  66% { transform: scale(1.07) translate(1vw, 1.5vh); }
+  50% { transform: scale(1.105) translate(-.35vw, .5vh); }
 }
 .floral-hero.is-offscreen .floral-hero-art { animation-play-state: paused; }
 .floral-partners {

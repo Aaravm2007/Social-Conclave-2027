@@ -1,3 +1,4 @@
+import "./programme-tabs.css";
 import { useState } from "react";
 import Label from "../../../components/ui/Label.jsx";
 import { SCHEDULE, LOCATIONS } from "../data/content.js";
@@ -21,7 +22,7 @@ export default function Programme() {
           Vile Parle West, Mumbai
         </p>
       </div>
-      <div className="day-tabs" role="tablist" aria-label="Event days">
+      <div className="day-tabs" style={{ "--active-day": day }} role="tablist" aria-label="Event days">
         {SCHEDULE.map((d, i) => (
           <button
             key={d.day}

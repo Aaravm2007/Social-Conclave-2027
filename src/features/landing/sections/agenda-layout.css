@@ -1,0 +1,12 @@
+/* Equal-sized cards, with the final row centred rather than left unfinished. */
+@media (min-width: 1051px) {
+  .landing-page .agenda-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px; }
+  .landing-page .agenda-grid > .agenda-card { grid-column: span 2; }
+  .landing-page .agenda-grid > .agenda-card:nth-child(4) { grid-column: 2 / span 2; }
+  .landing-page .agenda-grid > .agenda-card:nth-child(5) { grid-column: 4 / span 2; }
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  .landing-page .agenda-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .landing-page .agenda-grid > .agenda-card { grid-column: span 2; }
+  .landing-page .agenda-grid > .agenda-card:last-child { grid-column: 2 / span 2; }
+}

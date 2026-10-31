@@ -1,6 +1,6 @@
 import Label from "../ui/Label.jsx";
 import SocialIcon from "../ui/SocialIcon.jsx";
-import { CONTACTS } from "../../features/landing/data/content.js";
+import { CONTACT_EMAIL } from "../../features/landing/data/content.js";
 
 export default function Footer() {
   return (
@@ -15,14 +15,9 @@ export default function Footer() {
         </a>
         <div className="footer-contact">
           <Label light>Let’s talk</Label>
-          {CONTACTS.map((x) => (
-            <div key={x.name}>
-              <strong>{x.name}</strong>
-              <span>{x.role}</span>
-              <a href={`mailto:${x.email}`}>{x.email}</a>
-              <a href={`tel:${x.phone.replace(/\s/g, "")}`}>{x.phone}</a>
-            </div>
-          ))}
+          <div>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </div>
         </div>
         <div className="footer-social">
           <Label light>Follow the conversation</Label>

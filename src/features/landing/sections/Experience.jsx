@@ -1,14 +1,20 @@
+import FloralAccent from "./FloralAccent.jsx";
 import Label from "../../../components/ui/Label.jsx";
 
 export default function Experience() {
   return (
-    <section className="experience section" id="why">
-      <Label>Leave with more than memories</Label>
-      <h2>
-        Come for the ideas.
-        <br />
-        <em>Stay for everything else.</em>
-      </h2>
+    <section className="experience section floral-chapter" id="why">
+      <div className="experience-heading">
+        <div>
+          <Label>Leave with more than memories</Label>
+          <h2>
+            Come for the ideas.
+            <br />
+            <em>Stay for everything else.</em>
+          </h2>
+        </div>
+        <FloralAccent variant="experience" />
+      </div>
       <div className="experience-grid">
         <article className="prize">
           <span>THE PRIZE POOL</span>
