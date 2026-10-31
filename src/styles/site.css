@@ -633,11 +633,6 @@ details[open] > summary > span {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  filter: grayscale(1);
-  transition: filter 0.3s;
-}
-.guest-grid article:hover img {
-  filter: grayscale(0);
 }
 .guest-grid h3 {
   font-size: 14px;
@@ -817,8 +812,27 @@ footer {
 }
 .footer-contact a {
   font-size: 11px;
-  color: #d9e4dd;
+  color: #4a5a7e;
   overflow-wrap: anywhere;
+}
+.footer-contact .footer-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  color: #4a5a7e;
+}
+.footer-contact .footer-address svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.footer-contact .footer-address address {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 300px;
 }
 .footer-social > a {
   display: flex;

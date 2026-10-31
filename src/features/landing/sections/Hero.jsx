@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { REGISTER_HREF } from "../data/content.js";
 import "./floral-hero.css";
 
 export default function Hero() {
@@ -30,7 +31,18 @@ export default function Hero() {
           <img src="/images/hero/floral-unai.png" width="360" height="121" alt="United Nations Academic Impact" />
         </div>
         <div className="floral-hero-content">
-          <h1 id="hero-title"><span>Social</span><span>Conclave</span><span className="floral-title-year">27'</span></h1>
+          <h1 id="hero-title">
+            <span>Social</span>
+            <span>Conclave <span className="floral-title-year">'27</span></span>
+          </h1>
+          <a
+            className="floral-register"
+            href={REGISTER_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register now
+          </a>
           <p className="floral-tagline">Bigger conversations.<br />Greater impact.</p>
           <div className="floral-date" aria-label="25 to 28 February 2027">
             <p aria-hidden="true">25 <b>/</b> 26 <b>/</b> 27 <b>/</b> 28</p>

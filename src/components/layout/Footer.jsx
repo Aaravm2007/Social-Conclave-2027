@@ -17,6 +17,15 @@ export default function Footer() {
           <Label light>Let’s talk</Label>
           <div>
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            <div className="footer-address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              <address>
+                Mukesh Patel School of Technology Management and Engineering, Bhakti Vedant Swami Marg, Near Cooper Hospital, JVPD Scheme, Vile Parle West, Mumbai, Maharashtra 400056.
+              </address>
+            </div>
           </div>
         </div>
         <div className="footer-social">

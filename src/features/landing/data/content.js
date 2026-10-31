@@ -11,7 +11,7 @@ export const EVENT = {
   organiser:
     "Mukesh Patel School of Technology Management & Engineering (MPSTME), NMIMS",
   backedBy: "The United Nations",
-  registerUrl: "", // paste the registration form link here
+  registerUrl: "https://tally.so/r/pbjA1V", // paste the registration form link here
   website: "www.socialconclave.in",
   websiteUrl: "https://www.socialconclave.in",
   handle: "@social.conclave",

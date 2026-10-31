@@ -1,6 +1,6 @@
 import FloralAccent from "./FloralAccent.jsx";
 import Label from "../../../components/ui/Label.jsx";
-import { FEES, CONTACT_EMAIL } from "../data/content.js";
+import { FEES, REGISTER_HREF } from "../data/content.js";
 
 export default function Registration() {
   return (
@@ -34,11 +34,12 @@ export default function Registration() {
         </ul>
         <a
           className="button"
-          href={`mailto:${CONTACT_EMAIL}?subject=Social%20Conclave%202027%20Registration%20Enquiry`}
+          href={REGISTER_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Enquire about registration
+          Register now
         </a>
-        <p className="join-note">Connect directly with our organising team.</p>
       </div>
     </section>
   );

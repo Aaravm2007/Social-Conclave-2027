@@ -22,7 +22,7 @@
 .landing-page .join-intro { position: relative; padding-bottom: 240px; }
 .landing-page .floral-accent--invitation {
   width: 450px;
-  bottom: -20px;
+  bottom: -110px;
   left: calc(-1 * var(--page-gutter) - 24px);
   transform: scaleX(-1) rotate(-25deg);
   --breath-duration: 12s;
@@ -40,7 +40,7 @@
   .landing-page .experience-heading > div { max-width: 100%; padding-top: 130px; }
   .landing-page .floral-accent--experience { width: 280px; top: -48px; right: -34px; transform: rotate(-15deg); }
   .landing-page .join-intro { padding-bottom: 280px; }
-  .landing-page .floral-accent--invitation { width: 330px; bottom: -10px; left: -44px; }
+  .landing-page .floral-accent--invitation { width: 330px; bottom: -100px; left: -44px; }
   .landing-page .experience-grid { margin-top: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
